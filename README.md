@@ -38,6 +38,15 @@ pkg/               wasm-pack output (engine is ~270KB before gzip)
 www/               browser proof page (engine + duckdb-wasm end to end)
 ```
 
+## Status
+
+LIVE (2026-09-06): the engine powers the History & backup panel on the
+quote and change-order pads at housecalls.bradley.io, proven end to end in
+production: backup, full device wipe, restore by the twelve words alone.
+Snapshots ride DuckDB's EXPORT/IMPORT DATABASE (parquet) packed into one
+blob; the wasm file-layer paths that did not survive contact are recorded
+in the bradley.io integration (lib/housecalls/harness-client.ts).
+
 ## Build and test
 
 ```
