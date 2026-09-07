@@ -25,6 +25,9 @@ Built in the open, like the hunt it belongs to. The plan and its reasoning:
 ## Layout
 
 ```
+shell/             the P4 Dioxus shell: the quote pad native, riding the
+                   engine directly (money, words, envelope; no JS). Builds
+                   for desktop and web today; Android/iOS need the SDKs.
 engine/            the crate (also builds to wasm via wasm-pack)
   src/seed.rs      12 words: generate, normalize, to seed bytes
   src/keys.rs      Argon2id enc key + independent SHA-256 stash id
@@ -50,7 +53,8 @@ in the bradley.io integration (lib/housecalls/harness-client.ts).
 ## Build and test
 
 ```
-cargo test                                   # 18 tests incl. real-DuckDB executor
+cargo test                                   # 23 tests incl. real-DuckDB executor + shell wallet loop
+cargo build -p hc-shell                      # native desktop shell (webkit2gtk on Linux)
 wasm-pack build engine --target web --out-dir ../pkg --release
 ```
 

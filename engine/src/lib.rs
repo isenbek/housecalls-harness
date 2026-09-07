@@ -12,6 +12,7 @@
 //! the same SQL. That injection seam is what makes the engine universal.
 
 pub mod keys;
+pub mod money;
 pub mod seed;
 pub mod sqlrender;
 pub mod store;
