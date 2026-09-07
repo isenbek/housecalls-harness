@@ -1,0 +1,6 @@
+[application]
+name = "housecalls"
+
+[bundle]
+identifier = "io.bradley.housecalls"
+publisher = "House Calls"

@@ -26,8 +26,11 @@ Built in the open, like the hunt it belongs to. The plan and its reasoning:
 
 ```
 shell/             the P4 Dioxus shell: the quote pad native, riding the
-                   engine directly (money, words, envelope; no JS). Builds
-                   for desktop and web today; Android/iOS need the SDKs.
+                   engine directly (money, words, envelope; no JS).
+                   Desktop runs, web compiles, and ANDROID BUILDS: a
+                   10.6MB release APK (5.3MB native lib, arm64), P4.2
+                   2026-09-07. dx build --platform android with
+                   ANDROID_HOME/NDK_HOME/JAVA_HOME set; iOS awaits a Mac.
 engine/            the crate (also builds to wasm via wasm-pack)
   src/seed.rs      12 words: generate, normalize, to seed bytes
   src/keys.rs      Argon2id enc key + independent SHA-256 stash id
